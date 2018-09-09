@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Collection</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="addCollection" (ngSubmit)="register()">
+
+    <ion-item>
+      <ion-label>Enter Collection Name</ion-label>
+      <ion-input type="text" formControlName="collectionName"></ion-input>
+    </ion-item>
+
+    <button ion-button type="submit" [disabled]="!addCollection.valid">Add</button>
+  </form>
+</ion-content>

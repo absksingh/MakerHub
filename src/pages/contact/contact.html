@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-title>
+      Contact
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openAddContactPage()">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <current-collection></current-collection>
+
+  <ion-list>
+    <ion-item *ngFor="let contact of contacts$ | async">
+      <ion-thumbnail item-start>
+        <img src="https://scontent.fktm7-1.fna.fbcdn.net/v/t1.0-1/c0.0.160.160/p160x160/12802997_1290698474278626_3573775777847314983_n.jpg?_nc_cat=0&oh=dd99953c2c5bf03f7ff06bb31bfae618&oe=5B944C74">
+      </ion-thumbnail>
+      <h2>
+        {{ contact.referenceCollectionDetailName }}
+      </h2>
+      <p>Hayao Miyazaki • 1988</p>
+      <button ion-button clear item-end>View</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

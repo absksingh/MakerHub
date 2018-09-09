@@ -1,0 +1,23 @@
+<ion-card>
+
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="{{dealItem.sender.profileImageUrl}}">
+    </ion-avatar>
+    <h2>{{fullName}}</h2>
+    <p>Name: {{dealItem.itemDetail.itemName}}</p>
+    <p>Quantity: {{dealItem.transferQuantity}}</p>
+  </ion-item>
+
+  <ion-row *ngFor="let row of rows">
+    <ion-col *ngIf="isSingle; else elseBlock">
+      <img *ngFor="let itemImage of row" src="{{itemImage.imageUrl}}" />
+    </ion-col>
+    <ng-template #elseBlock>
+      <ion-col col-6 *ngFor="let itemImage of row">
+        <img src="{{itemImage.imageUrl}}" />
+      </ion-col>
+    </ng-template>
+  </ion-row>
+
+</ion-card>

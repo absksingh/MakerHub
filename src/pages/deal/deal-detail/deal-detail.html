@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+    <!-- <ion-buttons start>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons> -->
+    <ion-title>{{deal.referencedCollectionDetail.collectionDetailName}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item no-lines *ngFor="let dealItem of deal.dealItemDetails">
+      <deal-item-detail [dealItem]="dealItem" (click)="itemClicked(dealItem.itemDetail)"></deal-item-detail>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-avatar item-start>
+        <img src="https://ionicframework.com/dist/preview-app/www/assets/img/marty-avatar.png">
+      </ion-avatar>
+      <p>Hello!</p>
+    </ion-item>
+
+    <ion-item no-lines>
+      <p item-end>Hi!</p>
+      <ion-avatar item-end>
+        <img src="https://ionicframework.com/dist/preview-app/www/assets/img/marty-avatar.png">
+      </ion-avatar>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar>
+    <ion-input type="text" placeholder="message"></ion-input>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end (click)="openAddDealItemModal()">
+      <button ion-button icon-only>
+        <ion-icon name="apps"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="cash"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

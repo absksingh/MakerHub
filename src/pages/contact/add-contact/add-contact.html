@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Contact</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="https://scontent.fktm7-1.fna.fbcdn.net/v/t1.0-1/c0.0.160.160/p160x160/12802997_1290698474278626_3573775777847314983_n.jpg?_nc_cat=0&oh=dd99953c2c5bf03f7ff06bb31bfae618&oe=5B944C74">
+      </ion-avatar>
+      <h2>Collection Name</h2>
+      <h3>Logged In User: Abhishek</h3>
+      <p>I've had a pretty messed up day. If we just...</p>
+    </ion-item>
+
+  </ion-list>
+  
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let contact of contacts">
+      {{ contact.referenceCollectionDetailName }}
+    </ion-item>
+  </ion-list>
+
+</ion-content>

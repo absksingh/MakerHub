@@ -1,0 +1,19 @@
+<ion-card>
+
+  <ion-grid>
+
+    <ion-row *ngFor="let row of rows">
+      <ion-col width-50 *ngFor="let imageDetail of row">
+        <img src="{{imageDetail.imageUrl}}">
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <button ion-button icon-right full (click)="presentActionSheet()" type="button">
+        Add Image
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </ion-row>
+  </ion-grid>
+
+</ion-card>

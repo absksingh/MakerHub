@@ -1,0 +1,12 @@
+<!-- src/pages/home/home.html -->
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button *ngIf="!this.profile.loading" ion-button block color="primary" (click)="this.login()">Log In</button>
+  <div *ngIf="this.profile.loading"><p>Please wait...</p></div>
+</ion-content>

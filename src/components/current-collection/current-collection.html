@@ -1,0 +1,8 @@
+<ion-item>
+  <ion-avatar item-start>
+    <img src="{{ (this.profile.currentCollection$ | async)?.profileImageUrl }}">
+  </ion-avatar>
+  <h2>Collection: {{ (this.profile.currentCollection$| async)?.collectionName }}</h2>
+  <p>Users: {{ (this.profile.currentCollection$ | async)?.totalAppUserCount }}</p>
+  <p>Inventory: {{ (this.profile.currentCollection$ | async)?.inventoryCount }}</p>
+</ion-item>

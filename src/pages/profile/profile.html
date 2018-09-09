@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Me</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-group>
+    <ion-item-divider color="light">
+      <h2>{{appUserProfile.firstName + " " + appUserProfile.lastName}}</h2>
+    </ion-item-divider>
+    <button ion-item>
+      <ion-thumbnail item-start>
+        <img src="{{appUserProfile.profileImageUrl}}">
+      </ion-thumbnail>
+      <h4>User ID</h4>
+      <p>{{appUserProfile.userName}}</p>
+      <h4>Email</h4>
+      <p>{{appUserProfile.emailAddress}}</p>
+      <h4>Number</h4>
+      <p>{{appUserProfile.mobileNumber}}</p>
+    </button>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider color="light">Collections</ion-item-divider>
+    <button ion-item *ngFor="let collection of appUserProfile.appUserCollectionDetails" (click)="openCollectionDetail(collection)">
+      <ion-avatar item-start>
+        <img src="{{collection.collectionCoverImageUrl}}">
+      </ion-avatar>
+      <h2>{{collection.collectionName}}</h2>
+      <p>Users: {{collection.totalAppUserCount}}</p>
+      <p>Inventory: {{collection.inventoryCount}}</p>
+    </button>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider color="light">Settings</ion-item-divider>
+    <button ion-item (click)="auth.logout()">
+      <ion-icon name="add" item-start></ion-icon>
+      Add Collection
+    </button>
+    <button ion-item (click)="auth.logout()">
+      <ion-icon name="compass" item-start></ion-icon>
+      Join Collection
+    </button>
+    <button ion-item (click)="auth.logout()">
+      <ion-icon name="log-out" item-start></ion-icon>
+      Log Out
+    </button>
+  </ion-item-group>
+</ion-content>

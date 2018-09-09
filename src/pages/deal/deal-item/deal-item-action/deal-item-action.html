@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="https://scontent.fktm7-1.fna.fbcdn.net/v/t1.0-1/c0.0.160.160/p160x160/12802997_1290698474278626_3573775777847314983_n.jpg?_nc_cat=0&oh=dd99953c2c5bf03f7ff06bb31bfae618&oe=5B944C74">
+    </ion-avatar>
+    <h2>Collection: </h2>
+    <p>Inventory Count:500 || User Count: 5</p>
+  </ion-item>
+
+  <image-upload></image-upload>
+
+  <ion-item>
+    <h2>Name: </h2>
+    <p>{{item.itemName}}</p>
+  </ion-item>
+
+  <ion-item>
+    <h2>Height: </h2>
+    <p>{{item.height}}</p>
+  </ion-item>
+
+  <ion-item>
+    <h2>Weight: </h2>
+    <p>{{item.weight}}</p>
+  </ion-item>
+
+  <ion-item>
+    <h2>Tags: </h2>
+    <p>{{item.tags}}</p>
+  </ion-item>
+
+  <ion-item>
+    <h2>Inventory Count: </h2>
+    <p>{{item.itemQuantity}}</p>
+  </ion-item>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <ion-input [(ngModel)]="itemTransferQuantity" name="itemTransferQuantity" type="number" placeholder="Enter quanity"></ion-input>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button full (click)="sendDealItem()">
+            Send
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

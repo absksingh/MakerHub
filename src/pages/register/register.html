@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="registrationForm" (ngSubmit)="register()">
+    <ion-item>
+      <ion-label>First Name</ion-label>
+      <ion-input type="text" formControlName="firstName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last Name</ion-label>
+      <ion-input type="text" formControlName="lastName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="text" formControlName="appUserEmailAddress"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Mobile Number</ion-label>
+      <ion-input type="text" formControlName="appUserMobile"></ion-input>
+    </ion-item>
+    <single-image-upload #profileImageUploadComponent [imageDetail]="profileImageDetail"></single-image-upload>
+
+    <p>Your first collection</p>
+
+    <ion-item>
+      <ion-label>Collection Name</ion-label>
+      <ion-input type="text" formControlName="collectionName"></ion-input>
+    </ion-item>
+    <single-image-upload #collectionCoverImageUploadComponent [imageDetail]="coverImageDetail"></single-image-upload>
+    
+    <button ion-button type="submit" [disabled]="!registrationForm.valid">Register</button>
+
+  </form>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-title>
+      Inventory
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openAddInventoryPage()">
+        <ion-icon name="apps"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <current-collection></current-collection>
+
+  <item-list [items]="items"></item-list>
+
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Inventory</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <image-upload></image-upload>
+
+  <form [formGroup]="itemForm" (ngSubmit)="addItem()">
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" formControlName="itemName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Height</ion-label>
+      <ion-input type="text" formControlName="height"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Weight</ion-label>
+      <ion-input type="text" formControlName="weight"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Quantity</ion-label>
+      <ion-input type="number" formControlName="itemQuantity"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tags</ion-label>
+      <ion-input type="text" formControlName="tags"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" [disabled]="!itemForm.valid">Submit</button>
+  </form>
+</ion-content>
